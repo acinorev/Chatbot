@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(e1071)\n#library(printr) install.packages(\"printr\")\n\n\nsource('~/02_Projekte/03_FWD/Show-Case/code/readClaimsintoR.R')\n\n#This code trains a model based on the training data:\nmodel <- naiveBayes(x = subset(d.claims, select=-class), y = d.claims$class)\n\nsummary(model)\n\n#This code tests the model using the test data:\nresults <- predict(object = model, newdata = claims.test)\nView(results)\n",
+    "created" : 1512465714727.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "670112470",
+    "id" : "2B9C72ED",
+    "lastKnownWriteTime" : 1511863446,
+    "last_content_update" : 1511863446,
+    "path" : "~/02_Projekte/03_FWD/Show-Case/FWD_test/prediction.R",
+    "project_path" : "prediction.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
