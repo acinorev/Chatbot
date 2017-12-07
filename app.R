@@ -117,8 +117,9 @@ ui <- fluidPage(
                    wellPanel(style="border-color: #8b8b8b; background-color: darkorange",
                              radioButtons(inputId = "button", label = "Cases", choices = d.messages$class)),
                    wellPanel(style="border-color: #8b8b8b; background-color: darkorange",
-                             textAreaInput(inputId = "user", label="Text chosen", rows=8),
+                             textAreaInput(inputId="user",label="Input message", rows=8),
                              actionButton(inputId = "send", label = "Send")),
+                   tags$style(HTML("#user{background-color:#f7a92a}")),
                    wellPanel( style="border-color: #8b8b8b; background-color: darkorange", 
                               actionButton(inputId = "uploadimage", label = "Upload Image")
                               
@@ -128,8 +129,10 @@ ui <- fluidPage(
                column(5,
                    tags$h1(htmlOutput("bot", inline = FALSE)),
                    
-                   wellPanel(style="margin-top:13em;border-color: #8b8b8b; background-color: DeepSkyBlue",
-                       tags$h4(textOutput("chatbot", inline = FALSE))
+                   wellPanel(style="margin-top:13em; border-color: #8b8b8b; background-color: DeepSkyBlue",
+                       tags$label("Bot's response"),
+                       tags$p(textOutput("chatbot", inline = FALSE)),
+                       tags$style(HTML("#chatbot{border:1px solid #ccc; padding:1em; color:#535559}"))
                    )
                 )
         ),
@@ -185,7 +188,7 @@ server <- function(input, output, session){
     observe({
         input$button
         
-        updateTextInput(session, inputId = "user", label="Text chosen", value =  d.messages[which(d.messages$class == input$button), 2 ] )
+        updateTextInput(session, inputId = "user", label="Input message", value =  d.messages[which(d.messages$class == input$button), 2 ] )
     })
     
     
@@ -229,7 +232,7 @@ server <- function(input, output, session){
         
         if (input$user == d.messages[1,2]){
             
-            updateTextInput(session, inputId = "user", label="Text chosen", value = "Yes, of course. My insurance policy number is 123123123. Kind regards, John Doe" )
+            updateTextInput(session, inputId = "user", label="Input message", value = "Yes, of course. My insurance policy number is 123123123. Kind regards, John Doe" )
             
         }
         
