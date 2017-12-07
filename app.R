@@ -108,43 +108,34 @@ data_user <- function(policy){
 ##############################
 
 ui <- fluidPage(
-    tags$style(paste0(
-        "body:before { ",
-        "  content: ''; ",
-        "  height: 100%; width: 100%; ",
-        "  position: fixed; ",
-        "  z-index: -1; ",
-        "  background: url('phone.png') no-repeat 25% center fixed; ",
-        "  background-size: 55%; ",
-        "  filter: grayscale(100%); ",
-        "  -webkit-filter: grayscale(100%); }")),
-    
     fluidRow(
-        
-        column(3,
-               
-               tags$h1(htmlOutput("customer", inline = FALSE)),
-               wellPanel(style="border-color: #8b8b8b; background-color: darkorange",
-                         radioButtons(inputId = "button", label = "Cases", choices = d.messages$class)),
-               wellPanel(style="border-color: #8b8b8b; background-color: darkorange",
-                         textInput(inputId = "user", label="Text chosen"),
-                         tags$h4(textOutput("txt", inline = FALSE)),
-                         
-                         actionButton(inputId = "send", label = "Send")),
-               wellPanel( style="border-color: #8b8b8b; background-color: darkorange", 
-                          actionButton(inputId = "uploadimage", label = "Upload Image")
-                          
-               )),
-        column(3,
-               tags$h1(htmlOutput("bot", inline = FALSE)),
-               
-               wellPanel(style="border-color: #8b8b8b; background-color: darkorange",
-                         
-                         
-                         tags$h4(textOutput("chatbot", inline = FALSE))
-               )),
-        
-        column(6, tags$h1( htmlOutput("insurance", inline = FALSE)),
+        #phone
+        column(6, style="padding:10% 5%; background-image: url(\"resized_phone.jpg\"); background-size:100% 100%; min-height:75em",
+               #customer
+               column(7,
+                   tags$h1(htmlOutput("customer", inline = FALSE)),
+                   wellPanel(style="border-color: #8b8b8b; background-color: darkorange",
+                             radioButtons(inputId = "button", label = "Cases", choices = d.messages$class)),
+                   wellPanel(style="border-color: #8b8b8b; background-color: darkorange",
+                             textAreaInput(inputId = "user", label="Text chosen", rows=8),
+                             actionButton(inputId = "send", label = "Send")),
+                   wellPanel( style="border-color: #8b8b8b; background-color: darkorange", 
+                              actionButton(inputId = "uploadimage", label = "Upload Image")
+                              
+                   )
+               ),
+               #chat bot
+               column(5,
+                   tags$h1(htmlOutput("bot", inline = FALSE)),
+                   
+                   wellPanel(style="margin-top:13em;border-color: #8b8b8b; background-color: DeepSkyBlue",
+                       tags$h4(textOutput("chatbot", inline = FALSE))
+                   )
+                )
+        ),
+        #insurance
+        column(6, 
+               tags$h1( htmlOutput("insurance", inline = FALSE)),
                
                wellPanel( 
                    tags$h4(htmlOutput("form", inline = FALSE)),
