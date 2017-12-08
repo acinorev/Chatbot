@@ -119,7 +119,7 @@ ui <- fluidPage(
                    wellPanel(style="border-color: #8b8b8b; background-color: darkorange",
                              textAreaInput(inputId="user",label="Input message", rows=8),
                              actionButton(inputId = "send", label = "Send")),
-                   tags$style(HTML("#user{background-color:#f7a92a}")),
+                   tags$style(HTML("#user{background-color:#f7a92a; font-size:20px}")),
                    wellPanel( style="border-color: #8b8b8b; background-color: darkorange", 
                               actionButton(inputId = "uploadimage", label = "Upload Image")
                               
@@ -132,7 +132,7 @@ ui <- fluidPage(
                    wellPanel(style="margin-top:13em; border-color: #8b8b8b; background-color: DeepSkyBlue",
                        tags$label("Bot's response"),
                        tags$p(textOutput("chatbot", inline = FALSE)),
-                       tags$style(HTML("#chatbot{border:1px solid #ccc; padding:1em; color:#535559}"))
+                       tags$style(HTML("#chatbot{border:1px solid #ccc; padding:1em; color:#535559; font-size:20px}"))
                    )
                 )
         ),
@@ -145,7 +145,7 @@ ui <- fluidPage(
                    tags$hr(),
                    fluidRow (
                        column (6, tags$h4(htmlOutput("class", inline = FALSE))),
-                       column (6, 
+                       column (4, offset=2, 
                                uiOutput(outputId = "realimage"))
                    ),
                    
@@ -156,7 +156,7 @@ ui <- fluidPage(
                    fluidRow(
                        column(3, textInput(inputId = "first", label="First", value = "")),
                        column(3, textInput(inputId = "last", label="Last", value = "")),
-                       column (6, textAreaInput(inputId = "textarea", label = "Comments", rows=5, width = 175))),
+                       column (4, offset=2, textAreaInput(inputId = "textarea", label = "Comments", rows=5, width = 175))),
                    
                    textInput(inputId = "policynumber", label="Policy number", value = ""),
                    htmlOutput("address", inline = FALSE),
