@@ -267,11 +267,11 @@ server <- function(input, output, session){
         
         output$realimage <- renderUI({
             input$uploadimage
-            isolate(if (policy_split(input$user) == "123456789"){
+            isolate(if (input$policynumber == "123456789"){
                 tags$img(src = "cardamage.png", heigt = 100, width = 170)
-            } else { if ((policy_split(input$user) == "987654321")){
+            } else { if (input$policynumber == "987654321"){
                 tags$img(src = "TV.png", height = 120, width = 170)
-            } else  { if ((policy_split(input$user) == "123123123")){
+            } else  { if (input$policynumber == "123123123"){
                 tags$img(src = "desk.png", height = 120, width = 170)
             } else {
                 tags$img(src = "photo.png", height = 120, width = 170)
