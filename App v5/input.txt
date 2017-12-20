@@ -1,0 +1,18 @@
+CASES
+
+Household
+Dear Mr. Smith! My insurance policy number is 983-035.2. A technical defect on 05/02/2016 caused a TV set to ignite and 
+set fire to parts of the living room. The fire could be extinguished, but parts of my living room are completely damaged. 
+Kind regards, John Doe
+
+Car
+Hi there! I just realized today that my Toyota shows some damage in the back right. My insurance policy number is
+ 173-038.5. What do you need from me? Please call me on 0796303274. Kind regards, John Smith
+
+Health
+Hi! When my friend Julia Smith moved in, I slipped and broke my arm. Now the hospital wants money from me. Can you help 
+me? My policy number is 675-892.4. Kind regards, Jane Doe
+
+Others
+Dear Mrs. Simson. I need some information about your company. Please call me on my mobile phone. The number is 
+0765295374. Kind regards, Karen Clifford
