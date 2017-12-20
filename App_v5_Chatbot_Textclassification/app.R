@@ -31,7 +31,6 @@ classification_class <- c("Household", "Car", "Health", "Others")
 # street <- c("St. Peterhofstatt 2",  "Grossmuensterplatz", "Raemistrasse 101")
 # city <- c("8001 Zurich", "8001 Zurich", "8092 Zurich")
 # country <- c("Switzerland", "Switzerland", "Switzerland")
-# phone <- c( "+41 79 555 55 55", "079 111 11 11", "077 333 33 33")
 # birthdate <- c("02.04.1978", "12.12.1987", "03.07.1980" )
 
 # Helper Functions
@@ -351,7 +350,7 @@ ui <- fluidPage(
                           
                           conditionalPanel( "input.chatbot_class != 'Others'", 
                                             wellPanel( style="border-color: #8b8b8b; background-color: lightgrey; padding: 224px;")  )
-     
+                          
                    )
                    
                ))
@@ -457,7 +456,7 @@ server <- function(input, output, session){
                 updateTextInput(session, inputId = "last2", value = last_split(input$user))
                 updateTextInput(session, inputId = "phone2",  value = phone(input$user))
                 if (!is.na(first_split(input$user)) == TRUE && !is.na(last_split(input$user)) == TRUE ){
-                updateTextInput(session, inputId = "email2",  value = paste0(first_split(input$user),last_split(input$user), "@company.com"))
+                    updateTextInput(session, inputId = "email2",  value = paste0(first_split(input$user),last_split(input$user), "@company.com"))
                 } else {
                     updateTextInput(session, inputId = "email2",  value = "")
                 }
@@ -469,7 +468,7 @@ server <- function(input, output, session){
                     updateTextInput(session, inputId = "last3", value = last_split(input$user))
                     updateTextInput(session, inputId = "phone3",  value = phone(input$user))
                     if (!is.na(first_split(input$user)) == TRUE && !is.na(last_split(input$user)) == TRUE ){
-                    updateTextInput(session, inputId = "email3",  value = paste0(first_split(input$user),last_split(input$user), "@company.com"))
+                        updateTextInput(session, inputId = "email3",  value = paste0(first_split(input$user),last_split(input$user), "@company.com"))
                     } else {
                         updateTextInput(session, inputId = "email3",  value = "")
                     }
@@ -479,7 +478,7 @@ server <- function(input, output, session){
                     updateTextInput(session, inputId = "last4", value = last_split(input$user))
                     updateTextInput(session, inputId = "phone4",  value = phone(input$user))
                     if (!is.na(first_split(input$user)) == TRUE && !is.na(last_split(input$user)) == TRUE ){
-                    updateTextInput(session, inputId = "email4",  value = paste0(first_split(input$user),last_split(input$user), "@company.com"))
+                        updateTextInput(session, inputId = "email4",  value = paste0(first_split(input$user),last_split(input$user), "@company.com"))
                     } else {
                         updateTextInput(session, inputId = "email4",  value = "")
                     }
@@ -492,7 +491,7 @@ server <- function(input, output, session){
             
             isolate( 
                 "Thank you for using this opportunity to inform us."
-               
+                
                 # chatbot <- c("Thank you for your message. Is it possible that you send us your insurance-ID?",  Please upload an image of the damage!", "Thank you for your message. One of our experts will contact you shortly.")
                 # 
                 # else{if (input$user == d.messages[2,2]){
@@ -520,9 +519,9 @@ server <- function(input, output, session){
         # }
         
         
-            
         
-    
+        
+        
         
         output$realimage1 <- renderUI({ 
             input$uploadimage
